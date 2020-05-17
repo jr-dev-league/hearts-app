@@ -1,0 +1,11 @@
+.table-wrapper {
+	padding: 2rem;
+}
+
+.table-top {
+	height: 15rem;
+	width: 15rem;
+	border: 1pt black solid;
+	border-radius: 15rem;
+	margin: auto;
+}
