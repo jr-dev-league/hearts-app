@@ -6,12 +6,12 @@ import "./PlayerHand.css";
 
 interface Props {
 	hand: Hand;
+	setTrick: (tricks: (Card | null)[]) => void;
+	trick: Array<Card | null>;
 }
 
-const PlayerHand: React.FC<Props> = ({ hand }) => {
-	const [trick, setTrick] = useState([] as Card[]);
-	const [playable, setPlayable] = useState(true);
-	const [passing, setPassing] = useState(false);
+const PlayerHand: React.FC<Props> = ({ hand, setTrick, trick }) => {
+	const [playable, setPlayable] = useState(false);
 	const [handCards, setHandCards] = useState(
 		hand.cards.map(({ suit, value }) => ({
 			active: false,
@@ -25,6 +25,7 @@ const PlayerHand: React.FC<Props> = ({ hand }) => {
 		const cards = handCards
 			.map((card, i) => {
 				if (idx === i) {
+					setPlayable(!card.active);
 					return { ...card, active: !card.active };
 				}
 
@@ -48,6 +49,7 @@ const PlayerHand: React.FC<Props> = ({ hand }) => {
 
 		setTrick([...trick, card]);
 		setHandCards(cards);
+		setPlayable(false);
 	};
 
 	return (
@@ -59,6 +61,7 @@ const PlayerHand: React.FC<Props> = ({ hand }) => {
 							<PlayingCard
 								key={idx}
 								onClick={() => handleCardClick(idx)}
+								className="in-hand"
 								{...card}
 							/>
 						);

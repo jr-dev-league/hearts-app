@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import * as cardFaces from "../../cards";
 import "./PlayingCard.css";
 
 interface Props {
 	active?: boolean;
-	onClick: React.UIEventHandler;
-	overlap?: boolean;
+	className?: string;
+	onClick?: React.UIEventHandler;
 	suit: string;
+	styleVars?: { rotation: string };
 	value: string;
 }
 
@@ -24,17 +25,23 @@ const getCardFace = (suit: string, value: string): string => {
 
 const PlayingCard: React.FC<Props> = ({
 	active = false,
+	className,
 	onClick,
 	suit,
+	styleVars = {},
 	value,
-}) => (
-	<div
-		style={{ width: "6rem", marginTop: active ? "0rem" : "3rem" }}
-		onClick={onClick}
-		className="card-face"
-	>
-		<img alt={"playing card"} src={getCardFace(suit, value)} />
-	</div>
-);
+}) => {
+	const [rotation] = useState(styleVars.rotation);
+	const style = {
+		width: "6rem",
+		marginTop: active ? "0rem" : "3rem",
+		transform: rotation,
+	};
 
+	return (
+		<div style={style} onClick={onClick} className={className}>
+			<img alt={"playing card"} src={getCardFace(suit, value)} />
+		</div>
+	);
+};
 export default PlayingCard;

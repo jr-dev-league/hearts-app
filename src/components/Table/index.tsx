@@ -1,15 +1,14 @@
 import React from "react";
 import { Opponent } from "../../types";
 import "./Table.css";
-import PlayingCard from "../PlayingCard";
 
 interface Props {
 	opponents: Opponent[];
 }
 
-const Table: React.FC<Props> = () => (
+const Table: React.FC<Props> = ({ children }) => (
 	<div className="table-wrapper">
-		<div className="table-top"></div>
+		<div className="table-top">{children}</div>
 	</div>
 );
 

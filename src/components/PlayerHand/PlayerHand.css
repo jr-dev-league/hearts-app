@@ -5,24 +5,24 @@
 	margin-top: 1rem;
 }
 
-.card-face {
+.in-hand {
 	margin-left: -3rem;
 	margin-top: 3rem;
 }
 
-.card-face:first-child {
+.in-hand:first-child {
 	margin-left: 0;
 }
 
-.card-face:hover {
+.in-hand:hover {
 	margin-right: 3rem;
 }
 
-.card-face:last-child {
+.in-hand:last-child {
 	margin-right: 0rem;
 }
 
-.card-face:focus {
+.in-hand:focus {
 	margin-top: 0;
 }
 
