@@ -31,7 +31,11 @@ const Game: React.FC<{}> = () => {
 			<Table opponents={opponentsMock}>
 				<Trick trick={trick} />
 			</Table>
-			<PlayerHand setTrick={setTrick} trick={trick} hand={playerHandMock} />
+			<PlayerHand
+				onPlayCard={(cards: Card[]) => setTrick([...trick, cards[0]])}
+				trick={trick}
+				hand={playerHandMock}
+			/>
 		</>
 	);
 };

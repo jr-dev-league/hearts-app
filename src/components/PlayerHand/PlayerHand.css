@@ -5,6 +5,12 @@
 	margin-top: 1rem;
 }
 
+.hand {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .in-hand {
 	margin-left: -3rem;
 	margin-top: 3rem;
@@ -22,12 +28,7 @@
 	margin-right: 0rem;
 }
 
-.in-hand:focus {
-	margin-top: 0;
-}
-
-.hand {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.card-selected {
+	margin-bottom: 3rem;
+	margin-top: 0rem;
 }

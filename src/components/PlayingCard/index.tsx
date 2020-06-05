@@ -15,9 +15,9 @@ interface Props {
 const getCardFace = (suit: string, value: string): string => {
 	let card;
 	if (suit && value) {
-		card = `${suit}_${value}`;
+		card = `${suit}${value}`;
 	} else {
-		card = "Card_Back";
+		card = "CardBack";
 	}
 
 	return (cardFaces as any)[card] as string;
@@ -25,23 +25,35 @@ const getCardFace = (suit: string, value: string): string => {
 
 const PlayingCard: React.FC<Props> = ({
 	active = false,
-	className,
 	onClick,
 	suit,
 	styleVars = {},
 	value,
+	...rest
 }) => {
 	const [rotation] = useState(styleVars.rotation);
 	const style = {
-		width: "6rem",
-		marginTop: active ? "0rem" : "3rem",
 		transform: rotation,
+	};
+	const getClassName = () => {
+		let cardClassName = `card ${active ? "card-active" : ""}`;
+
+		if (rest.className) {
+			cardClassName = `${rest.className} ${cardClassName}`;
+		}
+
+		return cardClassName;
 	};
 
 	return (
-		<div style={style} onClick={onClick} className={className}>
-			<img alt={"playing card"} src={getCardFace(suit, value)} />
+		<div style={style} onClick={onClick} className={getClassName()}>
+			<img
+				alt={"playing card"}
+				src={getCardFace(suit, value)}
+				className={"card-face"}
+			/>
 		</div>
 	);
 };
+
 export default PlayingCard;

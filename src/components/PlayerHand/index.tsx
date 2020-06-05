@@ -6,72 +6,82 @@ import "./PlayerHand.css";
 
 interface Props {
 	hand: Hand;
-	setTrick: (tricks: (Card | null)[]) => void;
+	onPlayCard: (playedCard: Card[]) => void;
 	trick: Array<Card | null>;
 }
 
-const PlayerHand: React.FC<Props> = ({ hand, setTrick, trick }) => {
+interface HandCard extends Card {
+	active: boolean;
+}
+
+const convertToHandCard = (playingCard: Card) => {
+	return { active: false, ...playingCard };
+};
+
+const convertToPlayingCard = ({ suit, value }: HandCard) => {
+	return { suit, value };
+};
+
+const PlayerHand: React.FC<Props> = ({ hand, onPlayCard }) => {
 	const [playable, setPlayable] = useState(false);
 	const [handCards, setHandCards] = useState(
-		hand.cards.map(({ suit, value }) => ({
-			active: false,
-			played: false,
-			suit,
-			value,
-		}))
+		hand.cards.map((card) => convertToHandCard(card))
 	);
 
 	const handleCardClick = (idx: number) => {
-		const cards = handCards
-			.map((card, i) => {
-				if (idx === i) {
-					setPlayable(!card.active);
-					return { ...card, active: !card.active };
-				}
+		const cards = handCards.map((card, i) => {
+			if (idx === i) {
+				setPlayable(!card.active);
+				return { ...card, active: !card.active };
+			}
 
-				return { ...card, active: false };
-			})
-			.filter((card) => !card.played);
+			return { ...card, active: false };
+		});
 
 		setHandCards(cards);
 	};
 
-	const handlePlayClick = () => {
-		const idx = handCards.findIndex((c) => c.active);
-		const card = { value: handCards[idx].value, suit: handCards[idx].suit };
-		const cards = handCards.map((c, i) => {
-			if (idx === i) {
-				return { ...c, played: true };
-			}
+	const handlePlayCards = () => {
+		const { held, played } = handCards.reduce(
+			(cards, card) => {
+				if (card.active) {
+					return {
+						held: cards.held,
+						played: [...cards.played, convertToPlayingCard(card)],
+					};
+				}
 
-			return c;
-		});
+				return {
+					held: [...cards.held, card],
+					played: cards.played,
+				};
+			},
+			{ held: [] as HandCard[], played: [] as Card[] }
+		);
 
-		setTrick([...trick, card]);
-		setHandCards(cards);
+		setHandCards(held);
+		onPlayCard(played);
 		setPlayable(false);
 	};
 
 	return (
 		<>
 			<div className="hand">
-				{handCards.reduce((cards: JSX.Element[], card, idx) => {
-					if (!card.played) {
-						cards.push(
-							<PlayingCard
-								key={idx}
-								onClick={() => handleCardClick(idx)}
-								className="in-hand"
-								{...card}
-							/>
-						);
-					}
-
-					return cards;
-				}, [])}
+				{handCards.map((card, idx) => (
+					<PlayingCard
+						key={idx}
+						onClick={() => handleCardClick(idx)}
+						className={`in-hand ${card.active ? "card-selected" : ""}`}
+						{...card}
+					/>
+				))}
 			</div>
 			<div className="actions">
-				{playable ? <Button onClick={handlePlayClick}>Play Card</Button> : null}
+				{playable ? (
+					<Button className="primary" onClick={handlePlayCards}>
+						Play Card
+					</Button>
+				) : null}
 			</div>
 		</>
 	);

@@ -1,3 +1,11 @@
-/* .card-face {
-	margin-top: 3rem;
-} */
+.card {
+	border: 0.05rem solid black;
+	border-radius: 0.33rem;
+	display: block;
+	overflow: hidden;
+}
+
+.card-face {
+	display: block;
+	height: 8rem;
+}

@@ -1,109 +1,109 @@
-import Clubs_2 from "./2_clubs.svg";
-import Clubs_3 from "./3_clubs.svg";
-import Clubs_4 from "./4_clubs.svg";
-import Clubs_5 from "./5_clubs.svg";
-import Clubs_6 from "./6_clubs.svg";
-import Clubs_7 from "./7_clubs.svg";
-import Clubs_8 from "./8_clubs.svg";
-import Clubs_9 from "./9_clubs.svg";
-import Clubs_10 from "./10_clubs.svg";
-import Clubs_Jack from "./jack_clubs.svg";
-import Clubs_Queen from "./queen_clubs.svg";
-import Clubs_King from "./king_clubs.svg";
-import Clubs_Ace from "./ace_clubs.svg";
-import Diamonds_2 from "./2_diamonds.svg";
-import Diamonds_3 from "./3_diamonds.svg";
-import Diamonds_4 from "./4_diamonds.svg";
-import Diamonds_5 from "./5_diamonds.svg";
-import Diamonds_6 from "./6_diamonds.svg";
-import Diamonds_7 from "./7_diamonds.svg";
-import Diamonds_8 from "./8_diamonds.svg";
-import Diamonds_9 from "./9_diamonds.svg";
-import Diamonds_10 from "./10_diamonds.svg";
-import Diamonds_Jack from "./jack_diamonds.svg";
-import Diamonds_Queen from "./queen_diamonds.svg";
-import Diamonds_King from "./king_diamonds.svg";
-import Diamonds_Ace from "./ace_diamonds.svg";
-import Hearts_2 from "./2_hearts.svg";
-import Hearts_3 from "./3_hearts.svg";
-import Hearts_4 from "./4_hearts.svg";
-import Hearts_5 from "./5_hearts.svg";
-import Hearts_6 from "./6_hearts.svg";
-import Hearts_7 from "./7_hearts.svg";
-import Hearts_8 from "./8_hearts.svg";
-import Hearts_9 from "./9_hearts.svg";
-import Hearts_10 from "./10_hearts.svg";
-import Hearts_Jack from "./jack_hearts.svg";
-import Hearts_Queen from "./queen_hearts.svg";
-import Hearts_King from "./king_hearts.svg";
-import Hearts_Ace from "./ace_hearts.svg";
-import Spades_2 from "./2_spades.svg";
-import Spades_3 from "./3_spades.svg";
-import Spades_4 from "./4_spades.svg";
-import Spades_5 from "./5_spades.svg";
-import Spades_6 from "./6_spades.svg";
-import Spades_7 from "./7_spades.svg";
-import Spades_8 from "./8_spades.svg";
-import Spades_9 from "./9_spades.svg";
-import Spades_10 from "./10_spades.svg";
-import Spades_Jack from "./jack_spades.svg";
-import Spades_Queen from "./queen_spades.svg";
-import Spades_King from "./king_spades.svg";
-import Spades_Ace from "./ace_spades.svg";
-import Card_Back from "./back.svg";
+import Clubs2 from "./2-clubs.svg";
+import Clubs3 from "./3-clubs.svg";
+import Clubs4 from "./4-clubs.svg";
+import Clubs5 from "./5-clubs.svg";
+import Clubs6 from "./6-clubs.svg";
+import Clubs7 from "./7-clubs.svg";
+import Clubs8 from "./8-clubs.svg";
+import Clubs9 from "./9-clubs.svg";
+import Clubs10 from "./10-clubs.svg";
+import ClubsJack from "./jack-clubs.svg";
+import ClubsQueen from "./queen-clubs.svg";
+import ClubsKing from "./king-clubs.svg";
+import ClubsAce from "./ace-clubs.svg";
+import Diamonds2 from "./2-diamonds.svg";
+import Diamonds3 from "./3-diamonds.svg";
+import Diamonds4 from "./4-diamonds.svg";
+import Diamonds5 from "./5-diamonds.svg";
+import Diamonds6 from "./6-diamonds.svg";
+import Diamonds7 from "./7-diamonds.svg";
+import Diamonds8 from "./8-diamonds.svg";
+import Diamonds9 from "./9-diamonds.svg";
+import Diamonds10 from "./10-diamonds.svg";
+import DiamondsJack from "./jack-diamonds.svg";
+import DiamondsQueen from "./queen-diamonds.svg";
+import DiamondsKing from "./king-diamonds.svg";
+import DiamondsAce from "./ace-diamonds.svg";
+import Hearts2 from "./2-hearts.svg";
+import Hearts3 from "./3-hearts.svg";
+import Hearts4 from "./4-hearts.svg";
+import Hearts5 from "./5-hearts.svg";
+import Hearts6 from "./6-hearts.svg";
+import Hearts7 from "./7-hearts.svg";
+import Hearts8 from "./8-hearts.svg";
+import Hearts9 from "./9-hearts.svg";
+import Hearts10 from "./10-hearts.svg";
+import HeartsJack from "./jack-hearts.svg";
+import HeartsQueen from "./queen-hearts.svg";
+import HeartsKing from "./king-hearts.svg";
+import HeartsAce from "./ace-hearts.svg";
+import Spades2 from "./2-spades.svg";
+import Spades3 from "./3-spades.svg";
+import Spades4 from "./4-spades.svg";
+import Spades5 from "./5-spades.svg";
+import Spades6 from "./6-spades.svg";
+import Spades7 from "./7-spades.svg";
+import Spades8 from "./8-spades.svg";
+import Spades9 from "./9-spades.svg";
+import Spades10 from "./10-spades.svg";
+import SpadesJack from "./jack-spades.svg";
+import SpadesQueen from "./queen-spades.svg";
+import SpadesKing from "./king-spades.svg";
+import SpadesAce from "./ace-spades.svg";
+import CardBack from "./card-back.svg";
 
 export {
-	Card_Back,
-	Clubs_2,
-	Clubs_3,
-	Clubs_4,
-	Clubs_5,
-	Clubs_6,
-	Clubs_7,
-	Clubs_8,
-	Clubs_9,
-	Clubs_10,
-	Clubs_Jack,
-	Clubs_Queen,
-	Clubs_King,
-	Clubs_Ace,
-	Diamonds_2,
-	Diamonds_3,
-	Diamonds_4,
-	Diamonds_5,
-	Diamonds_6,
-	Diamonds_7,
-	Diamonds_8,
-	Diamonds_9,
-	Diamonds_10,
-	Diamonds_Jack,
-	Diamonds_Queen,
-	Diamonds_King,
-	Diamonds_Ace,
-	Hearts_2,
-	Hearts_3,
-	Hearts_4,
-	Hearts_5,
-	Hearts_6,
-	Hearts_7,
-	Hearts_8,
-	Hearts_9,
-	Hearts_10,
-	Hearts_Jack,
-	Hearts_Queen,
-	Hearts_King,
-	Hearts_Ace,
-	Spades_2,
-	Spades_3,
-	Spades_4,
-	Spades_5,
-	Spades_6,
-	Spades_7,
-	Spades_8,
-	Spades_9,
-	Spades_10,
-	Spades_Jack,
-	Spades_Queen,
-	Spades_King,
-	Spades_Ace,
+	CardBack,
+	Clubs2,
+	Clubs3,
+	Clubs4,
+	Clubs5,
+	Clubs6,
+	Clubs7,
+	Clubs8,
+	Clubs9,
+	Clubs10,
+	ClubsJack,
+	ClubsQueen,
+	ClubsKing,
+	ClubsAce,
+	Diamonds2,
+	Diamonds3,
+	Diamonds4,
+	Diamonds5,
+	Diamonds6,
+	Diamonds7,
+	Diamonds8,
+	Diamonds9,
+	Diamonds10,
+	DiamondsJack,
+	DiamondsQueen,
+	DiamondsKing,
+	DiamondsAce,
+	Hearts2,
+	Hearts3,
+	Hearts4,
+	Hearts5,
+	Hearts6,
+	Hearts7,
+	Hearts8,
+	Hearts9,
+	Hearts10,
+	HeartsJack,
+	HeartsQueen,
+	HeartsKing,
+	HeartsAce,
+	Spades2,
+	Spades3,
+	Spades4,
+	Spades5,
+	Spades6,
+	Spades7,
+	Spades8,
+	Spades9,
+	Spades10,
+	SpadesJack,
+	SpadesQueen,
+	SpadesKing,
+	SpadesAce,
 };
