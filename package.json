@@ -47,7 +47,6 @@
     "@storybook/preset-create-react-app": "^3.0.0",
     "@storybook/react": "^5.3.19",
     "awesome-typescript-loader": "^5.2.1",
-    "react-docgen-typescript-loader": "^3.7.2",
-    "react-docgen-typescript-webpack-plugin": "^1.1.0"
+    "storybook": "^5.3.19"
   }
 }
