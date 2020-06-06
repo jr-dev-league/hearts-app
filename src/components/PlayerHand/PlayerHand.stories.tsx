@@ -1,10 +1,10 @@
 import React from "react";
-import PlayerHand from "./index";
+import PlayerHand from ".";
 import { Hand } from "../../types";
 import "semantic-ui-css/semantic.min.css";
 
 export default {
-	title: "Player hand",
+	title: "Player Hand",
 	component: PlayerHand,
 };
 
