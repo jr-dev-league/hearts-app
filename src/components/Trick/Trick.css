@@ -1,19 +1,29 @@
 .trick {
+	align-items: center;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	height: 100%;
+	height: 20rem;
+	justify-content: center;
+	position: relative;
 }
 
-.trick-sides {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	width: 100%;
-	height: 1rem;
-	align-items: center;
+.trick-card {
+	position: absolute;
+	top: 50%;
 }
 
-.trick-left {
+.left {
+	transform: translate(-5rem) rotate(102deg);
+}
+
+.right {
+	transform: translate(5rem) rotate(280deg);
+}
+
+.across {
+	transform: translate(0, -5rem) rotate(186deg);
+}
+
+.in-front {
+	transform: translate(0, 5rem) rotate(-13deg);
 }

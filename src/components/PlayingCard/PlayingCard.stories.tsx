@@ -1,36 +1,13 @@
 import React from "react";
 import PlayerCard from ".";
 import { Card } from "../../types";
+import { allCards } from "../../utils/storybook";
 import "semantic-ui-css/semantic.min.css";
 
 export default {
 	title: "All Cards",
 	component: PlayerCard,
 };
-
-const suits = ["Spades", "Diamonds", "Clubs", "Hearts"];
-const values = [
-	"Ace",
-	"2",
-	"3",
-	"4",
-	"5",
-	"6",
-	"7",
-	"8",
-	"9",
-	"10",
-	"Jack",
-	"Queen",
-	"King",
-];
-
-const allCards = suits.map((suit) =>
-	values.map((value) => ({
-		suit,
-		value,
-	}))
-);
 
 export const CardStory = () => (
 	<>
@@ -54,7 +31,7 @@ export const CardStory = () => (
 		</div>
 		<h1>Hearts</h1>
 		<div style={{ display: "flex" }}>
-			{allCards[3].map(({ suit, value }) => (
+			{allCards[3].map(({ suit, value }: Card) => (
 				<PlayerCard suit={suit} value={value} />
 			))}
 		</div>

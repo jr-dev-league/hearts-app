@@ -28,9 +28,7 @@ const Game: React.FC<{}> = () => {
 
 	return (
 		<>
-			<Table opponents={opponentsMock}>
-				<Trick trick={trick} />
-			</Table>
+			<Trick trick={trick} />
 			<PlayerHand
 				onPlayCard={(cards: Card[]) => setTrick([...trick, cards[0]])}
 				trick={trick}
