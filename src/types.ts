@@ -4,11 +4,23 @@ export interface Opponent {
 	score: number;
 }
 
-export interface Hand {
-	cards: Card[];
+export interface Card {
+	suit: Suit;
+	value: Value;
 }
 
-export interface Card {
-	suit: string;
-	value: string;
-}
+export type Suit = "Spades" | "Diamonds" | "Clubs" | "Hearts";
+export type Value =
+	| "Ace"
+	| "2"
+	| "3"
+	| "4"
+	| "5"
+	| "6"
+	| "7"
+	| "8"
+	| "9"
+	| "10"
+	| "Jack"
+	| "Queen"
+	| "King";

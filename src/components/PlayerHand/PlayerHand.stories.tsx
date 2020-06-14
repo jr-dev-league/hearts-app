@@ -1,6 +1,6 @@
 import React from "react";
 import PlayerHand from ".";
-import { Hand } from "../../types";
+import { Card } from "../../types";
 import "semantic-ui-css/semantic.min.css";
 
 export default {
@@ -8,19 +8,13 @@ export default {
 	component: PlayerHand,
 };
 
-const playerHandMock: Hand = {
-	cards: [
-		{ suit: "Spades", value: "King" },
-		{ suit: "Spades", value: "Ace" },
-		{ suit: "Hearts", value: "10" },
-		{ suit: "Hearts", value: "Jack" },
-	],
-};
+const playerHandMock: Card[] = [
+	{ suit: "Spades", value: "King" },
+	{ suit: "Spades", value: "Ace" },
+	{ suit: "Hearts", value: "10" },
+	{ suit: "Hearts", value: "Jack" },
+];
 
 export const HandStory = () => (
-	<PlayerHand
-		onPlayCard={() => {}}
-		trick={[]}
-		hand={playerHandMock}
-	></PlayerHand>
+	<PlayerHand onPlayCard={() => {}} hand={playerHandMock}></PlayerHand>
 );

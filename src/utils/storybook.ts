@@ -1,7 +1,7 @@
-import { Card } from "../types";
+import { Card, Value, Suit } from "../types";
 
-const suits = ["Spades", "Diamonds", "Clubs", "Hearts"];
-const values = [
+const suits: Suit[] = ["Spades", "Diamonds", "Clubs", "Hearts"];
+const values: Value[] = [
 	"Ace",
 	"2",
 	"3",

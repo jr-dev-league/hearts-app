@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Trick from ".";
 import { Button } from "semantic-ui-react";
 import { Card } from "../../types";
+import PlayerHand from "../PlayerHand";
 import { allCards } from "../../utils/storybook";
 import "semantic-ui-css/semantic.min.css";
 
@@ -10,24 +11,24 @@ export default {
 	component: Trick,
 };
 
+const getOpenSlotIdx = (cards: (Card | null)[]) => {
+	const openSlot = cards.findIndex((card) => card === null);
+	return openSlot;
+};
+
 const handleAdd = (
 	cards: (Card | null)[],
 	setCards: (cards: (Card | null)[]) => void
 ) => {
-	const suitIdx = Math.floor(Math.random() * 4);
-	const valueIdx = Math.floor(Math.random() * 13);
-
-	const card = allCards[suitIdx][valueIdx];
-
-	const openSlot = cards.findIndex((card) => card === null);
+	const openSlot = getOpenSlotIdx(cards);
 
 	if (openSlot !== -1) {
-		cards[openSlot] = card;
+		cards[openSlot] = randomCard();
 	}
 
-	console.log("cards", cards, openSlot);
+	// console.log("cards", cards, openSlot);
 
-	setCards(cards);
+	setCards([...cards]);
 };
 
 const handleRemove = (
@@ -41,13 +42,15 @@ const handleRemove = (
 	setCards(cards.reverse());
 };
 
+const randomCard = () => {
+	const suitIdx = Math.floor(Math.random() * 4);
+	const valueIdx = Math.floor(Math.random() * 13);
+
+	return allCards[suitIdx][valueIdx];
+};
+
 export const TrickStory = () => {
-	const [cards, setCards] = useState([
-		null,
-		null,
-		null,
-		null,
-	] as (Card | null)[]);
+	const [cards, setCards] = useState<(Card | null)[]>([null, null, null, null]);
 
 	return (
 		<div style={{ margin: "2rem" }}>
@@ -64,6 +67,36 @@ export const TrickStory = () => {
 				Add Card
 			</Button>
 			<Trick trick={cards} />
+		</div>
+	);
+};
+
+export const PlayCardTrick = () => {
+	const [trickCards, setCards] = useState<(Card | null)[]>([
+		null,
+		null,
+		null,
+		null,
+	]);
+
+	const hand = [];
+	for (let i = 0; i < 13; i++) {
+		hand.push(randomCard());
+	}
+
+	const handleTrickCard = (cards: Card[]) => {
+		const nextOpenSlot = getOpenSlotIdx(trickCards);
+
+		if (nextOpenSlot !== -1) {
+			trickCards[nextOpenSlot] = cards[0];
+			setCards([...trickCards]);
+		}
+	};
+
+	return (
+		<div>
+			<Trick trick={trickCards} />
+			<PlayerHand hand={hand} onPlayCard={handleTrickCard} />
 		</div>
 	);
 };

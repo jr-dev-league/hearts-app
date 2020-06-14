@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "semantic-ui-react";
 import PlayingCard from "../PlayingCard";
-import { Card, Hand } from "../../types";
+import { Card } from "../../types";
 import "./PlayerHand.css";
 
 interface Props {
-	hand: Hand;
+	hand: Card[];
 	onPlayCard: (playedCard: Card[]) => void;
-	trick: Array<Card | null>;
 }
 
 interface HandCard extends Card {
@@ -25,7 +24,7 @@ const convertToPlayingCard = ({ suit, value }: HandCard) => {
 const PlayerHand: React.FC<Props> = ({ hand, onPlayCard }) => {
 	const [playable, setPlayable] = useState(false);
 	const [handCards, setHandCards] = useState(
-		hand.cards.map((card) => convertToHandCard(card))
+		hand.map((card) => convertToHandCard(card))
 	);
 
 	const handleCardClick = (idx: number) => {

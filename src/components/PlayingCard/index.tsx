@@ -15,7 +15,7 @@ interface Props {
 const getCardFace = (suit: string, value: string): string => {
 	let card;
 	if (suit && value) {
-		card = `${suit}${value}`;
+		card = suit + value;
 	} else {
 		card = "CardBack";
 	}
