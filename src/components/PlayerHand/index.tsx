@@ -6,7 +6,7 @@ import "./PlayerHand.css";
 
 interface Props {
 	hand: Card[];
-	onPlayCard: (playedCard: Card[]) => void;
+	onPlayCard: (playedCard: Card[]) => boolean;
 }
 
 interface HandCard extends Card {
@@ -58,9 +58,10 @@ const PlayerHand: React.FC<Props> = ({ hand, onPlayCard }) => {
 			{ held: [] as HandCard[], played: [] as Card[] }
 		);
 
-		setHandCards(held);
-		onPlayCard(played);
-		setPlayable(false);
+		if (onPlayCard(played)) {
+			setHandCards(held);
+			setPlayable(false);
+		}
 	};
 
 	return (

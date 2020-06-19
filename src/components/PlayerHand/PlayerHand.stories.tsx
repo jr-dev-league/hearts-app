@@ -16,5 +16,5 @@ const playerHandMock: Card[] = [
 ];
 
 export const HandStory = () => (
-	<PlayerHand onPlayCard={() => {}} hand={playerHandMock}></PlayerHand>
+	<PlayerHand onPlayCard={() => true} hand={playerHandMock}></PlayerHand>
 );

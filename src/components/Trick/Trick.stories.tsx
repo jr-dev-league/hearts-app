@@ -90,7 +90,10 @@ export const PlayCardTrick = () => {
 		if (nextOpenSlot !== -1) {
 			trickCards[nextOpenSlot] = cards[0];
 			setCards([...trickCards]);
+			return true;
 		}
+
+		return false;
 	};
 
 	return (

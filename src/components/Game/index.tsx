@@ -29,7 +29,10 @@ const Game: React.FC<{}> = () => {
 		<>
 			<Trick trick={trick} />
 			<PlayerHand
-				onPlayCard={(cards: Card[]) => setTrick([...trick, cards[0]])}
+				onPlayCard={(cards: Card[]) => {
+					setTrick([...trick, cards[0]]);
+					return true;
+				}}
 				hand={playerHandMock}
 			/>
 		</>
