@@ -1,33 +1,27 @@
 import React from "react";
 import "./GamesList.css";
 import { GameListEntry } from "../../types";
-import { Table } from "semantic-ui-react";
-import { scryRenderedComponentsWithType } from "react-dom/test-utils";
-
+import { Segment, SegmentGroup } from "semantic-ui-react";
 
 interface GamesListProps {
 	games: GameListEntry[];
 }
 
-const GamesListBody: React.FC<GamesListProps> = ( games ) => (
-    <Table.Body>
-            
-    </Table.Body>
-);
+interface ListEntryProps {
+    game: GameListEntry;
+}
 
-const GamesList: React.FC<GamesListProps> = ( games ) => (
-    <Table celled>
-        <Table.Header>
-            <Table.Row>
-                <Table.HeaderCell>Game ID</Table.HeaderCell>
-                <Table.HeaderCell>Spot 1</Table.HeaderCell>
-                <Table.HeaderCell>Spot 2</Table.HeaderCell>
-                <Table.HeaderCell>Spot 3</Table.HeaderCell>
-                <Table.HeaderCell>Spot 4</Table.HeaderCell>
-                <Table.HeaderCell>Join Game</Table.HeaderCell>
-            </Table.Row>
-        </Table.Header>
-        <GamesListBody games={games}></GamesListBody>
-    </Table>
-);
+const ListEntry: React.FC<ListEntryProps> = ( {game} ) => {
+    return (
+    <SegmentGroup>
+        <Segment>{game.gameID}</Segment>
+        <Segment children={game.playerNames}/>
+    </SegmentGroup>)
+};
+
+const GamesList: React.FC<GamesListProps> = ( {games} ) => {
+    return (<SegmentGroup> {games.map((game) => {
+        return <ListEntry game={game}/>
+    })}</SegmentGroup>)
+};
 export default GamesList;
