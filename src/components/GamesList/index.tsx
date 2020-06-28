@@ -2,7 +2,7 @@ import React from "react";
 import "./GamesList.css";
 import UserInfo from "../UserInfo"
 import { GameListEntry } from "../../types";
-import { Button, Container, Segment, SegmentGroup } from "semantic-ui-react";
+import { Button, Segment, SegmentGroup } from "semantic-ui-react";
 
 interface GamesListProps {
 	games: GameListEntry[];
@@ -16,15 +16,23 @@ const MAX_PLAYERS = 4;
 const GAME_NAME = "Hearts";
 
 const ListEntry: React.FC<ListEntryProps> = ( {game} ) => {
+    const emptySlotName = "Slot Empty"
     let full = true;
     const playerNames = game.playerNames;
-    if (MAX_PLAYERS > game.playerNames.length) {
+    if (playerNames.includes(emptySlotName)) {
         full = false;
-        const emptySpots = MAX_PLAYERS - game.playerNames.length
+    }
+    if (MAX_PLAYERS > playerNames.length) {
+        full = false;
+        const emptySpots = MAX_PLAYERS - playerNames.length
         for (let i = 0; i < emptySpots; i++) {
-            playerNames.push("Slot empty")
+            playerNames.push(emptySlotName)
         }
     }
+
+    const playerAvatars = [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/A_Shiba_Inu.jpg/64px-A_Shiba_Inu.jpg",
+    ]
 
     return (
         <SegmentGroup>
@@ -51,7 +59,7 @@ const ListEntry: React.FC<ListEntryProps> = ( {game} ) => {
                     playerNames.map((name) => {
                         return (
                             <Segment>
-                                <UserInfo userName={name}/>
+                                <UserInfo userName={name} userAvatar={playerAvatars[0]}/>
                             </Segment>
                         )
                     })
