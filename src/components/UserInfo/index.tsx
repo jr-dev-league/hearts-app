@@ -1,16 +1,18 @@
 import React from "react";
-import { Label } from "semantic-ui-react";
+import { Image } from "semantic-ui-react";
 
 interface Props {
-	userName: string;
+    userName: string;
+    userAvatar: string;
 }
 
-const UserInfo: React.FC<Props> = ( {userName} ) => {
+const UserInfo: React.FC<Props> = ( {userName, userAvatar} ) => {
     return (
-    <Label as='a' image>
-        <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' alt='avatar'/>
-        { userName }
-    </Label>)
+        <div>
+            <Image avatar src={userAvatar} alt="user avatar"/>
+            <span>{ userName }</span>
+        </div>
+    )
 };
 
 export default UserInfo;

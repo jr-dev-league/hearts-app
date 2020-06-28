@@ -1,6 +1,6 @@
 import React from "react";
 import UserInfo from ".";
-import { Container } from "semantic-ui-react";
+import { SegmentGroup, Segment } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 export default {
@@ -8,9 +8,15 @@ export default {
 	component: UserInfo,
 };
 
+const PlayerAvatar = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/A_Shiba_Inu.jpg/64px-A_Shiba_Inu.jpg";
+
 export const GameListStory = () => (
-    <Container>
-    <UserInfo userName="Ol' Smelly"/>
-    <UserInfo userName="Spot"/>
-    </Container>
+    <SegmentGroup>
+        <Segment>
+            <UserInfo userName="Ol' Smelly" userAvatar={PlayerAvatar}/>
+        </Segment>
+        <Segment>
+            <UserInfo userName="Spot" userAvatar={PlayerAvatar}/>
+        </Segment>
+    </SegmentGroup>
 );
