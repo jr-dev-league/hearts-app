@@ -1,3 +1,7 @@
 .ui.black.inverted.right.aligned.segment {
     transform: none;
 }
+
+.game-list-row {
+    margin: .75rem;
+}

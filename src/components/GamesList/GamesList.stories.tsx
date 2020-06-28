@@ -1,7 +1,7 @@
 import React from "react";
 import GamesList from ".";
 import { GameListEntry } from "../../types"
-import { Segment } from "semantic-ui-react";
+import { Segment, Modal, ModalContent } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 export default {
@@ -25,8 +25,18 @@ const gamesListMock: GameListEntry[] = [
    }
 ];
 
+const onJoinMock = () => {
+    return (
+        <Modal>
+            <ModalContent text>
+                <p>We've found the following gravatar image associated with your e-mail address.</p>
+            </ModalContent>
+        </Modal>
+    )
+}
+
 export const GameListStory = () => (
     <Segment>
-	    <GamesList games={gamesListMock}></GamesList>
+	    <GamesList games={gamesListMock} onJoin={onJoinMock}></GamesList>
     </Segment>
 );
