@@ -1,7 +1,7 @@
 import React from "react";
 import GamesList from ".";
 import { GameListEntry } from "../../types"
-import { Container } from "semantic-ui-react";
+import { Segment } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 export default {
@@ -12,8 +12,8 @@ export default {
 const gamesListMock: GameListEntry[] = [
     {   gameID: 2,
         playerNames: [
-            "Fido",
-            "Sparky",
+            "Pumpkin",
+            "Ol' Yeller",
             "Ol' Smelly",
             "Lassie"
         ]
@@ -21,15 +21,12 @@ const gamesListMock: GameListEntry[] = [
     {   gameID: 5,
         playerNames: [
             "Mr. Peanutbutter",
-            "empty",
-            "empty",
-            "empty"
         ]
    }
 ];
 
 export const GameListStory = () => (
-    <Container>
-	<GamesList games={gamesListMock}></GamesList>
-    </Container>
+    <Segment>
+	    <GamesList games={gamesListMock}></GamesList>
+    </Segment>
 );
