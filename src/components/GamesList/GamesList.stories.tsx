@@ -26,13 +26,7 @@ const gamesListMock: GameListEntry[] = [
 ];
 
 const onJoinMock = () => {
-    return (
-        <Modal>
-            <ModalContent text>
-                <p>We've found the following gravatar image associated with your e-mail address.</p>
-            </ModalContent>
-        </Modal>
-    )
+    alert("onJoin succeeded")
 }
 
 export const GameListStory = () => (

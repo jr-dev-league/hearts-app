@@ -63,7 +63,7 @@ const ListEntry: React.FC<ListEntryProps> = ( {game, onJoin} ) => {
                 
                     <GridColumn>
                         <Container textAlign="center">
-                            <h4>Slots</h4>
+                            <h4>Player Slots</h4>
                         </Container>
                     </GridColumn>
 

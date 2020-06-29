@@ -6,10 +6,10 @@ interface Props {
     userAvatar: string;
 }
 
-const UserInfo: React.FC<Props> = ( {userName, userAvatar} ) => {
+const UserInfo: React.FC<Props> = ( { userName, userAvatar } ) => {
     return (
         <div>
-            <Image avatar src={userAvatar} alt="user avatar"/>
+            <Image avatar src={ userAvatar } alt="user avatar"/>
             <span>{ userName }</span>
         </div>
     )
