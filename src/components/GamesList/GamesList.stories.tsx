@@ -1,7 +1,7 @@
 import React from "react";
 import GamesList from ".";
 import { GameListEntry } from "../../types"
-import { Segment, Modal, ModalContent } from "semantic-ui-react";
+import { Segment} from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 export default {
