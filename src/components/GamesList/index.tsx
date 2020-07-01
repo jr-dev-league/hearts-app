@@ -1,8 +1,12 @@
 import React from "react";
 import "./GamesList.css";
 import UserInfo from "../UserInfo"
-import { GameListEntry } from "../../types";
 import { Button, Container, Segment, SegmentGroup, Grid, GridRow, GridColumn } from "semantic-ui-react";
+
+export interface GameListEntry {
+	gameID: number,
+	playerNames: string[]
+}
 
 interface GamesListProps {
     games: GameListEntry[];
@@ -14,8 +18,20 @@ interface ListEntryProps {
     onJoin: () => void;
 }
 
+interface TopBarProps {
+    gameID: number;
+    onJoin: () => void;
+    full: boolean;
+}
+
 const MAX_PLAYERS = 4;
 const GAME_NAME = "Hearts";
+
+const GamesList: React.FC<GamesListProps> = ( {games, onJoin} ) => {
+    return (<SegmentGroup> {games.map((game) => {
+        return <ListEntry game={game} onJoin={onJoin}/>
+    })}</SegmentGroup>)
+};
 
 const ListEntry: React.FC<ListEntryProps> = ( {game, onJoin} ) => {
     const emptySlotName = "Slot Empty"
@@ -45,28 +61,14 @@ const ListEntry: React.FC<ListEntryProps> = ( {game, onJoin} ) => {
 
     return (
         <SegmentGroup>
-
-            <SegmentGroup horizontal>
-                <Segment inverted color="black">
-                    <h3>{`${GAME_NAME} Game ${game.gameID}`}</h3>
-                </Segment>
-                <Segment inverted color="black" textAlign="right">
-                    {
-                        full ? <Button disabled inverted>Game Full</Button>
-                         : <Button inverted color='red' onClick={onJoin}>Join Game</Button>
-                    }
-                </Segment>
-            </SegmentGroup>
-
-            <Grid columns={5}>
-                <GridRow className="game-list-row">
-                
+            <TopBar gameID={game.gameID} onJoin={onJoin} full={full}/>
+            <Grid columns={5} padded>
+                <GridRow className="game-list-row">   
                     <GridColumn>
                         <Container textAlign="center">
                             <h4>Player Slots</h4>
                         </Container>
                     </GridColumn>
-
                     {   
                         playerNames.map((name) => {
                             return (
@@ -88,10 +90,21 @@ const ListEntry: React.FC<ListEntryProps> = ( {game, onJoin} ) => {
     )
 };
 
-const GamesList: React.FC<GamesListProps> = ( {games, onJoin} ) => {
-    return (<SegmentGroup> {games.map((game) => {
-        return <ListEntry game={game} onJoin={onJoin}/>
-    })}</SegmentGroup>)
-};
+const TopBar: React.FC<TopBarProps> = ( {gameID, onJoin, full } ) => {
+    return (
+        <SegmentGroup horizontal>
+            <Segment inverted color="black">
+                <h3>{`${GAME_NAME} Game ${ gameID}`}</h3>
+            </Segment>
+            <Segment inverted color="black" textAlign="right">
+                {
+                    full ? <Button disabled inverted>Game Full</Button>
+                        : <Button inverted primary onClick={onJoin}>Join Game</Button>
+                }
+            </Segment>
+        </SegmentGroup>
+    )
+    
+}
 
 export default GamesList;

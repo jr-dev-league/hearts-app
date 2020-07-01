@@ -1,6 +1,6 @@
 import React from "react";
-import GamesList from ".";
-import { GameListEntry } from "../../types"
+import { GameListEntry } from "./index";
+import GamesList from "."
 import { Segment} from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
@@ -25,12 +25,12 @@ const gamesListMock: GameListEntry[] = [
    }
 ];
 
-const onJoinMock = () => {
-    alert("onJoin succeeded")
+const handleJoinMock = () => {
+    alert("handleJoin succeeded")
 }
 
 export const GameListStory = () => (
     <Segment>
-	    <GamesList games={gamesListMock} onJoin={onJoinMock}></GamesList>
+	    <GamesList games={gamesListMock} onJoin={handleJoinMock}></GamesList>
     </Segment>
 );
