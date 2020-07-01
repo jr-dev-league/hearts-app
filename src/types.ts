@@ -24,8 +24,3 @@ export type Value =
 	| "Jack"
 	| "Queen"
 	| "King";
-
-export interface GameListEntry {
-	gameID: number,
-	playerNames: string[]
-}
