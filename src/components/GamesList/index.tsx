@@ -11,6 +11,7 @@ import {
   GridColumn,
 } from "semantic-ui-react";
 
+
 export interface GameListEntry {
   gameID: number;
   playerNames: string[];
@@ -127,3 +128,4 @@ const ListEntry: React.FC<ListEntryProps> = ({ game, onJoin }) => {
 };
 
 export default GamesList;
+import "./GamesList.css";import "./GamesList.css";import "./GamesList.css";

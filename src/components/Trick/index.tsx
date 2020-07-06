@@ -7,7 +7,7 @@ interface Props {
 	trick: (Card | null)[];
 }
 
-const positions = ["left", "across", "right", "in-front"];
+const positions = ["left-trick-card", "across-trick-card", "right-trick-card", "in-front-trick-card"];
 
 const Trick: React.FC<Props> = ({ trick }) => (
 	<div className="trick" style={{ display: "flex" }}>
