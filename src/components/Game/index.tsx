@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Table from "../Table";
 import Trick from "../Trick";
-import { Card, Opponent } from "../../types";
+import { Card } from "../../types";
 import PlayerHand from "../PlayerHand";
 
 const playerHandMock: Card[] = [
@@ -11,13 +10,7 @@ const playerHandMock: Card[] = [
 	{ suit: "Hearts", value: "Jack" },
 ];
 
-const opponentsMock: Opponent[] = [
-	{ cards: 2, name: "Little Grace", score: 15 },
-	{ cards: 2, name: "Baby Cakes", score: 65 },
-	{ cards: 1, name: "Edu", score: 23 },
-];
-
-const Game: React.FC<{}> = () => {
+const Game: React.FC = () => {
 	const [trick, setTrick] = useState([
 		// null,
 		// null,

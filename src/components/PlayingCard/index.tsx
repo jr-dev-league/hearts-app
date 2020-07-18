@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as cardFaces from "../../cards";
+import cardFaces from "../../cards";
 import "./PlayingCard.css";
 
 interface Props {
@@ -20,7 +20,7 @@ const getCardFace = (suit: string, value: string): string => {
 		card = "CardBack";
 	}
 
-	return (cardFaces as any)[card] as string;
+	return cardFaces[card];
 };
 
 const PlayingCard: React.FC<Props> = ({

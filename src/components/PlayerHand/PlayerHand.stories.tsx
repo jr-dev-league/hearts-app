@@ -15,6 +15,6 @@ const playerHandMock: Card[] = [
 	{ suit: "Hearts", value: "Jack" },
 ];
 
-export const HandStory = () => (
+export const HandStory = (): JSX.Element => (
 	<PlayerHand onPlayCard={() => true} hand={playerHandMock}></PlayerHand>
 );

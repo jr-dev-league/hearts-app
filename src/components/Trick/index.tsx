@@ -11,12 +11,13 @@ const positions = ["left", "across", "right", "in-front"];
 
 const Trick: React.FC<Props> = ({ trick }) => (
 	<div className="trick" style={{ display: "flex" }}>
-		{trick.reduce((cards: JSX.Element[], card, index) => {
+		{trick.reduce((cards: JSX.Element[], card, idx) => {
 			if (card === null) return cards;
 			return [
 				...cards,
 				<PlayingCard
-					className={`trick-card ${positions[index]}`}
+					key={idx}
+					className={`trick-card ${positions[idx]}`}
 					suit={card.suit}
 					value={card.value}
 				/>,

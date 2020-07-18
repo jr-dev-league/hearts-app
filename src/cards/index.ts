@@ -52,7 +52,7 @@ import SpadesKing from "./king-spades.svg";
 import SpadesAce from "./ace-spades.svg";
 import CardBack from "./card-back.svg";
 
-export {
+const cardFaces: { [key: string]: string } = {
 	CardBack,
 	Clubs2,
 	Clubs3,
@@ -107,3 +107,5 @@ export {
 	SpadesKing,
 	SpadesAce,
 };
+
+export default cardFaces;

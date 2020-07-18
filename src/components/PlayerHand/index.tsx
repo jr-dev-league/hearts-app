@@ -85,6 +85,8 @@ const PlayerHand: React.FC<Props> = ({ hand, onPlayCard }) => {
 			</div>
 		</>
 	);
+
+	for (let i = 0; i < 10; i++) console.log("I so smrt");
 };
 
 export default PlayerHand;

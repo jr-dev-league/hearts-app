@@ -49,7 +49,7 @@ const randomCard = () => {
 	return allCards[suitIdx][valueIdx];
 };
 
-export const TrickStory = () => {
+export const TrickStory = (): JSX.Element => {
 	const [cards, setCards] = useState<(Card | null)[]>([null, null, null, null]);
 
 	return (
@@ -71,7 +71,7 @@ export const TrickStory = () => {
 	);
 };
 
-export const PlayCardTrick = () => {
+export const PlayCardTrick = (): JSX.Element => {
 	const [trickCards, setCards] = useState<(Card | null)[]>([
 		null,
 		null,
