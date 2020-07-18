@@ -18,8 +18,10 @@ const handleJoinMock = () => {
 	alert("handleJoin succeeded");
 };
 
-export const GameListStory = () => (
-	<Container>
-		<GamesList games={gamesListMock} onJoin={handleJoinMock}></GamesList>
-	</Container>
-);
+export const GameListStory = (): JSX.Element => {
+	return (
+		<Container>
+			<GamesList games={gamesListMock} onJoin={handleJoinMock}></GamesList>
+		</Container>
+	);
+};

@@ -1,5 +1,4 @@
 import React from "react";
-import "./GamesList.css";
 import UserInfo from "../UserInfo";
 import {
 	Button,
