@@ -24,17 +24,3 @@ export type Value =
 	| "Jack"
 	| "Queen"
 	| "King";
-<<<<<<< HEAD
-=======
-
-export interface GameListEntry {
-	gameID: number,
-	key: number,
-	playerNames: {
-		1: string;
-		2: string;
-		3: string;
-		4: string;
-	}
-}
->>>>>>> createGamesList
