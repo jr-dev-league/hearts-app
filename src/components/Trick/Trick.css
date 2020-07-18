@@ -12,18 +12,18 @@
 	top: 50%;
 }
 
-.left {
+.left-trick-card {
 	transform: translate(-5rem) rotate(102deg);
 }
 
-.right {
+.right-trick-card {
 	transform: translate(5rem) rotate(280deg);
 }
 
-.across {
+.across-trick-card {
 	transform: translate(0, -5rem) rotate(186deg);
 }
 
-.in-front {
+.in-front-trick-card {
 	transform: translate(0, 5rem) rotate(-13deg);
 }
